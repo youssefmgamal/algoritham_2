@@ -1,0 +1,52 @@
+ALGORITHM problem1
+VAR
+    seq1 : ARRAY_OF INTEGER[4];
+    seq2 : ARRAY_OF INTEGER[5];
+    i : INTEGER;
+    sum : INTEGER;
+    distinct : BOOLEAN;
+BEGIN
+    seq1 := [3,1,7,9];
+    seq2 := [2,4,1,9,3];
+    sum := 0;
+    distinct := TRUE;
+    dis_n:ARRAY_OF type[length];
+   
+   FOR i FROM 0 TO seq1.length-1 STEP 1  DO
+
+       FOR j FROM 0 TO seq2.length-1 STEP 1  DO
+       IF 
+       (seq1[i] = seq2[j]) THEN
+       distinct = FALSE
+         BREAK
+      
+        END_IF
+       END_FOR
+    
+         IF (distinct = TRUE) THEN
+            sum = sum + seq1[i]
+            dis_n.push(seq1[1])
+         END_IF
+         distinct = TRUE
+     END_FOR
+
+FOR j FROM 0 TO seq2.length-1 STEP 1  DO
+
+       FOR i FROM 0 TO seq1.length-1 STEP 1  DO
+       IF 
+       (seq1[i] = seq2[j]) THEN
+       distinct = FALSE
+         BREAK
+       
+        END_IF
+       END_FOR
+    
+         IF (distinct = TRUE) THEN
+            sum = sum + seq2[j]
+            dis_n.push(seq2[j])
+         END_IF
+         distinct = TRUE
+     END_FOR
+      Write( "the distinct numbers are ":dis_n)
+      Write("the total sum of distinct numbers is ": sum)
+END

@@ -1,0 +1,35 @@
+PROCEDURE dot_product(v1:ARRAY_OF INTEGER[5], v2:ARRAY_OF INTEGER[5];)
+VAR
+//    ps : INTEGER;
+   i  : INTEGER;
+   orthogonal : BOOLEAN;
+BEGIN
+    ps = 0
+
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+    
+       ps = v1[i]*v2[i] + ps
+
+     END_FOR
+    //  IF (ps = 0) THEN
+    //     orthogonal = FALSE
+    //    ELSE
+    //    orthogonal = TRUE
+       END_IF
+     END_IF
+END
+
+ALGORITHM product 
+VAR
+    ps : INTEGER
+    v1:ARRAY_OF INTEGER[5] := [1,2,3,4,7]
+    v2 :ARRAY_OF INTEGER[5] := [6,7,8,9,5]
+    orthogonal = BOOLEAN
+BEGIN
+ dot_product(v1,v2)
+ IF (ps = 0) THEN
+    orthogonal = FALSE
+    ELSE
+    orthogonal = TRUE
+ END_IF   
+END
